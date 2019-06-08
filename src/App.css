@@ -8,23 +8,5 @@
 
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
-  /* grid-gap: 10px; */
-}
-
-.header {
-  grid-area: h;
-  background-color: darkgreen;
-}
-.header img {
-  width: 60px;
-}
-
-.navi {
-  grid-area: n;
-  background-color: aquamarine;
-}
-
-.profile {
-  grid-area: p;
-  background-color: burlywood;
+  grid-gap: 10px;
 }

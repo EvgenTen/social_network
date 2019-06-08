@@ -4,7 +4,7 @@
   display: grid;
   grid-template-areas:
     "h h"
-    "n c";
+    "n p";
 
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
@@ -24,7 +24,7 @@
   background-color: aquamarine;
 }
 
-.content {
-  grid-area: c;
+.profile {
+  grid-area: p;
   background-color: burlywood;
 }

@@ -6,10 +6,10 @@ const Content = () => {
       <div>
         <img
           src="https://static.interestingengineering.com/images/APRIL/sizes/black_hole_resize_md.jpg"
-          alt="Hello git"
+          alt="New content"
         />
       </div>
-      <div>content</div>  
+      <div>content</div>
     </div>
   );
 };

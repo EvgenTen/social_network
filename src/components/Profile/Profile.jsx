@@ -1,5 +1,5 @@
 import React from "react";
-import classes from '../../App.css'
+import classes from "../../App.css";
 import MyPosts from "./MyPosts/MyPosts";
 
 const Profile = () => {
@@ -7,13 +7,14 @@ const Profile = () => {
     <div className={classes.profile}>
       <div>
         <img
+          height="100px"
           src="https://static.interestingengineering.com/images/APRIL/sizes/black_hole_resize_md.jpg"
           alt="New content"
         />
-		</div>
-		<div>ava + description</div>
-    <MyPosts />
-	</div>
+      </div>
+      <div>ava + description</div>
+      <MyPosts />
+    </div>
   );
 };
 export default Profile;

@@ -1,19 +1,11 @@
-import React from "react";
-import c from "./MyPosts.module.css";
-import Post from "./Post/Post";
+import React from "react"
+import c from "./MyPosts.module.css"
+import Post from "./Post/Post"
 
-const MyPosts = () => {
-  let dialogsArr = [
-    { message: "Hello world", likesCount: 11 },
-    { message: "Kukurudza", likesCount: 5 },
-    { message: "Hello world2", likesCount: 32 },
-    { message: "Hello world2", likesCount: 5 },
-    { message: "Hello world3", likesCount: 77 }
-  ];
-
-  let postsElements = dialogsArr.map(post => (
+const MyPosts = props => {
+  let postsElements = props.posts.map(post => (
     <Post message={post.message} likesCount={post.likesCount} />
-  ));
+  ))
 
   return (
     <div className={c.postsBlock}>
@@ -26,6 +18,6 @@ const MyPosts = () => {
       </div>
       <div className={c.posts}>{postsElements}</div>
     </div>
-  );
-};
-export default MyPosts;
+  )
+}
+export default MyPosts

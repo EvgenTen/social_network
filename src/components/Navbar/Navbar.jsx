@@ -4,7 +4,7 @@ import { NavLink, BrowserRouter, Route } from "react-router-dom"
 import SideBar from "./SideBar/SideBar"
 
 const Navbar = props => {
-  debugger
+  
   let friendsList = props.friends.friends.map(friend => (
     <SideBar name={friend.name} id={friend.id} imgUrl={friend.imgUrl} />
   ))

@@ -48,4 +48,11 @@ let state = {
     ]
   }
 }
+
+export let addPost = (postMessage) => {
+	debugger
+
+	state.profilePage.posts.push(postMessage)
+}
+
 export default state

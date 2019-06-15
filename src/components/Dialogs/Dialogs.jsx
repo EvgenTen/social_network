@@ -1,6 +1,6 @@
 import React from "react"
 import c from "./Dialogs.module.css"
-import { NavLink } from "react-router-dom"
+// import { NavLink } from "react-router-dom"
 import DialogItem from "./DialogItem/DialogItem"
 import Message from "./Message/Message"
 
@@ -12,9 +12,12 @@ const Dialogs = props => {
   let dialogsMessage = props.messages.map(messages => (
     <Message message={messages.message} id={messages.id} />
   ))
-
+  let newPostFromMessageBox = React.createRef()
   let addPost = () => {
-    alert("Post added")
+	  
+	  
+	  let text = newPostFromMessageBox.current.value
+    alert(text + " -  been added successfully")
   }
   return (
     <div className={c.dialogs}>
@@ -25,7 +28,7 @@ const Dialogs = props => {
         {dialogsMessage}
         <div>
           <div>
-            <textarea />
+            <textarea ref={newPostFromMessageBox}></textarea>
           </div>
           <button onClick={addPost}>Add post</button>
         </div>

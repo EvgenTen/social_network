@@ -7,6 +7,9 @@ const MyPosts = props => {
     <Post message={post.message} likesCount={post.likesCount} />
   ))
 
+  let clicker = () => {
+    alert("hi")
+  }
   return (
     <div className={c.postsBlock}>
       <h3>My Posts</h3>
@@ -14,7 +17,7 @@ const MyPosts = props => {
         <div>
           <textarea />
         </div>
-        <button>Add post</button>
+        <button onClick={clicker}>Add post</button>
       </div>
       <div className={c.posts}>{postsElements}</div>
     </div>

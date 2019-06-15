@@ -1,13 +1,12 @@
 import React from "react"
 import classes from "./Navbar.module.css"
 import { NavLink, BrowserRouter, Route } from "react-router-dom"
-import SiteBar from "./SiteBar/SiteBar"
-import c from "./SiteBar/SiteBar.module.css"
+import SideBar from "./SideBar/SideBar"
 
 const Navbar = props => {
   debugger
   let friendsList = props.friends.friends.map(friend => (
-    <SiteBar name={friend.name} id={friend.id} imgUrl={friend.imgUrl} />
+    <SideBar name={friend.name} id={friend.id} imgUrl={friend.imgUrl} />
   ))
   return (
     <nav className={classes.navi}>
@@ -30,7 +29,12 @@ const Navbar = props => {
       <div className={classes.item}>
         <a>Settings</a>
       </div>
-      {friendsList}
+      <div className={classes.bar}>
+        <div className={classes.item}>
+          <a>Friend Online</a>
+          {friendsList}
+        </div>
+      </div>
     </nav>
   )
 }

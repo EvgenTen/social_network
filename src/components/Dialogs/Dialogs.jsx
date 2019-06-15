@@ -13,10 +13,23 @@ const Dialogs = props => {
     <Message message={messages.message} id={messages.id} />
   ))
 
+  let addPost = () => {
+    alert("Post added")
+  }
   return (
     <div className={c.dialogs}>
-      <div className={c.dialogsItems}>{dialogsElements}</div>
-      <div className={c.messages}>{dialogsMessage}</div>
+      <div className={c.dialogsItems} activeClassName={c.active}>
+        {dialogsElements}
+      </div>
+      <div className={c.message}>
+        {dialogsMessage}
+        <div>
+          <div>
+            <textarea />
+          </div>
+          <button onClick={addPost}>Add post</button>
+        </div>
+      </div>
     </div>
   )
 }

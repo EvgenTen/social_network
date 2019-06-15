@@ -14,8 +14,11 @@
   color: gold;
 }
 
-.img {
-  width: 50px;
-  height: 50px;
-  border-radius: 30px;
+.namesList {
+  font-size: 20px;
+}
+
+.bar {
+  padding: 50px;
+  margin: auto;
 }

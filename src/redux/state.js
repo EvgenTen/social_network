@@ -1,4 +1,5 @@
 let state = {
+  // list for profile messages
   profilePage: {
     posts: [
       { message: "HelloVasya", likesCount: 2 },
@@ -25,6 +26,8 @@ let state = {
       { name: "Vasya", id: 4 }
     ]
   },
+
+  // featured friends list to display in navbar
   friendsBar: {
     friends: [
       {
@@ -49,10 +52,10 @@ let state = {
   }
 }
 
-export let addPost = (postMessage) => {
-	debugger
+export let addPost = postMessage => {
+  debugger
 
-	state.profilePage.posts.push(postMessage)
+  state.profilePage.posts.push(postMessage)
 }
 
 export default state

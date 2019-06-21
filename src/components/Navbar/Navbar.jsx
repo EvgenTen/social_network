@@ -4,7 +4,6 @@ import { NavLink, BrowserRouter, Route } from "react-router-dom"
 import SideBar from "./SideBar/SideBar"
 
 const Navbar = props => {
-  
   let friendsList = props.friends.friends.map(friend => (
     <SideBar name={friend.name} id={friend.id} imgUrl={friend.imgUrl} />
   ))
@@ -31,8 +30,16 @@ const Navbar = props => {
       </div>
       <div className={classes.bar}>
         <div className={classes.item}>
-          <a>Friend Online</a>
-          {friendsList}
+          <table>
+            <tr>
+              <th />
+              <th>Friend Online</th>
+              <th />
+            </tr>
+            <tr>
+              <td>{friendsList}</td>
+            </tr>
+          </table>
         </div>
       </div>
     </nav>

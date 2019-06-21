@@ -12,12 +12,14 @@ const App = props => {
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
+        {/* lists with friends to navbar */}
         <Navbar friends={props.state.friendsBar} />
         <div class="app-wrapper-content">
           <Route
             path="/dialogs"
             render={() => (
               <Dialogs
+                // lists to dialogs page
                 dialogs={props.state.messagesPage.dialogs}
                 messages={props.state.messagesPage.messages}
               />
@@ -25,7 +27,13 @@ const App = props => {
           />
           <Route
             path="/profile"
-            render={() => <Profile posts={props.state.profilePage.posts} addPost={props.addPost} />}
+            render={() => (
+              <Profile
+                //index -> post -> profile -> myPosts
+                posts={props.state.profilePage.posts}
+                addPost={props.addPost}
+              />
+            )}
           />
         </div>
       </div>

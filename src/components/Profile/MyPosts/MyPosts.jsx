@@ -6,19 +6,23 @@ const MyPosts = props => {
   let postsElements = props.posts.map(post => (
     <Post message={post.message} likesCount={post.likesCount} />
   ))
-let newPostElement = React.createRef()
+
+  // method create link to some element in React
+  let newPostElement = React.createRef()
 
   let addPostClick = () => {
-	 let text = newPostElement.current.value
-	//  alert(text + " added")
-	props.addPost(text)
+    let text = newPostElement.current.value
+    //alert(text + " added")
+    props.addPost(text)
+    newPostElement.current.value = ""
   }
   return (
     <div className={c.postsBlock}>
       <h3>My Posts</h3>
       <div>
         <div>
-          <textarea ref={newPostElement}></textarea>
+          {/* ref connected to text area */}
+          <textarea ref={newPostElement} />
         </div>
         <button onClick={addPostClick}>Add post</button>
       </div>

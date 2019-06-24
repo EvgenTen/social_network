@@ -1,15 +1,17 @@
+import { reRenderEntireTree } from "../render"
 let state = {
   // list for profile messages
   profilePage: {
     posts: [
-      { message: "HelloVasya", likesCount: 2 },
-      { message: "Kukurudza", likesCount: 50 },
-      { message: "Hello world2", likesCount: 33 },
-      { message: "Hello world2", likesCount: 51 },
-      { message: "Hello world3", likesCount: 717 }
+      { id: 1, message: "HelloVasya", likesCount: 2 },
+      { id: 2, message: "Kukurudza", likesCount: 50 },
+      { id: 3, message: "Hello world2", likesCount: 33 },
+      { id: 4, message: "Hello world2", likesCount: 51 },
+      { id: 5, message: "Hello world3", likesCount: 717 }
     ]
   },
-
+  //_____________________________________________
+  //dialogs names and messages
   messagesPage: {
     messages: [
       { id: 1, message: "Hello" },
@@ -26,7 +28,7 @@ let state = {
       { name: "Vasya", id: 4 }
     ]
   },
-
+  //____________________________________________________
   // featured friends list to display in navbar
   friendsBar: {
     friends: [
@@ -52,10 +54,18 @@ let state = {
   }
 }
 
+// The function will push the "postMessage" from text field in profile page
+
 export let addPost = postMessage => {
   debugger
+  let newPost = {
+    id: 6,
+    message: postMessage,
+    likesCount: 10
+  }
 
-  state.profilePage.posts.push(postMessage)
+  state.profilePage.posts.unshift(newPost)
+  reRenderEntireTree(state)
 }
 
 export default state

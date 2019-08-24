@@ -2,11 +2,19 @@ import React from "react";
 import c from "./../Dialogs.module.css";
 import { NavLink } from "react-router-dom";
 
+//-----------------------------------------------------
 const DialogItem = props => {
-  return (
-    <div className={c.dialogsItems + " " + c.active}>
-      <NavLink to={"/dialogs/" + props.id}>{props.name}</NavLink>
+ 
+
+  //---------------MAP for dialogs list
+  let dialogsList = props.dialogs.map(d => (
+    <div>
+      <br />
+      <NavLink to={"/dialogs/" + d.id}>{d.name}</NavLink>
     </div>
-  );
+  ));
+
+  return <div>{dialogsList}</div>;
 };
+
 export default DialogItem;

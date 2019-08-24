@@ -1,0 +1,28 @@
+.friendBar {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+
+}
+.box a {
+  color: white;
+  text-decoration: none;
+}
+
+.box {
+  text-align: center;
+}
+.box img {
+  width: 50px;
+  border-radius: 60px;
+  padding: 10px;
+}
+
+.box a:hover {
+  color: rgb(228, 35, 35);
+  font-style: italic;
+  font-family: fantasy;
+  font-size: 24px;
+}
+.box a.active {
+  color: rgb(216, 109, 22);
+}

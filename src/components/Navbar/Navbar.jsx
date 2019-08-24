@@ -1,47 +1,38 @@
+
+
 import React from "react"
-import classes from "./Navbar.module.css"
+import c from "./Navbar.module.css"
 import { NavLink, BrowserRouter, Route } from "react-router-dom"
-import SideBar from "./SideBar/SideBar"
+import FeatFriends from "./FeatFriends/FeatFriends";
+
+
 
 const Navbar = props => {
-  let friendsList = props.friends.friends.map(friend => (
-    <SideBar name={friend.name} id={friend.id} imgUrl={friend.imgUrl} />
-  ))
+
+
   return (
-    <nav className={classes.navi}>
-      <div className={classes.item}>
-        <NavLink to="/profile" activeClassName={classes.activeLink}>
+    <nav className={c.navbar}>
+      <div className={c.item}>
+        <NavLink to="/profile"  activeClassName={c.active}>
           Profile
         </NavLink>
       </div>
-      <div className={classes.item}>
-        <NavLink to="/dialogs" activeClassName={classes.activeLink}>
+      <div className={c.item}>
+        <NavLink to="/dialogs" activeClassName={c.active}>
           Messages
         </NavLink>
       </div>
-      <div className={classes.item}>
+      <div className={c.item}>
         <a>News</a>
       </div>
-      <div className={classes.item}>
+      <div className={c.item}>
         <a>Music</a>
       </div>
-      <div className={classes.item}>
+      <div className={c.item}>
         <a>Settings</a>
       </div>
-      <div className={classes.bar}>
-        <div className={classes.item}>
-          <table>
-            <tr>
-              <th />
-              <th>Friend Online</th>
-              <th />
-            </tr>
-            <tr>
-              <td>{friendsList}</td>
-            </tr>
-          </table>
-        </div>
-      </div>
+      <h2>Friend`s online</h2>
+     <FeatFriends />
     </nav>
   )
 }

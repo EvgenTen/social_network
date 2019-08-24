@@ -1,39 +1,28 @@
-import React from "react"
-import c from "./Dialogs.module.css"
-// import { NavLink } from "react-router-dom"
-import DialogItem from "./DialogItem/DialogItem"
-import Message from "./Message/Message"
+import React from "react";
+import c from "./Dialogs.module.css";
+import { NavLink } from "react-router-dom";
+import DialogItem from "./DialogItem/DialogItem";
+import Message from "./Message/Message";
 
+
+//-----------------for the links-----------------------------------
+
+//----------------------------------------------------
+
+
+//-----------------------------------------------------
 const Dialogs = props => {
-  let dialogsElements = props.dialogs.map(dialog => (
-    <DialogItem name={dialog.name} id={dialog.id} />
-  ))
+  //---------------MAP for dialogs list
 
-  let dialogsMessage = props.messages.map(messages => (
-    <Message message={messages.message} id={messages.id} />
-  ))
-  let newPostFromMessageBox = React.createRef()
-  let addPost = () => {
-	  
-	  
-	  let text = newPostFromMessageBox.current.value
-    alert(text + " -  been added successfully")
-  }
+ 
   return (
     <div className={c.dialogs}>
-      <div className={c.dialogsItems} activeClassName={c.active}>
-        {dialogsElements}
-      </div>
-      <div className={c.message}>
-        {dialogsMessage}
-        <div>
-          <div>
-            <textarea ref={newPostFromMessageBox}></textarea>
-          </div>
-          <button onClick={addPost}>Add post</button>
-        </div>
-      </div>
+      <DialogItem dialogs={props.state.dialogs} />
+      <Message messages={props.state.messages} />
+
+     
     </div>
-  )
-}
-export default Dialogs
+  );
+};
+
+export default Dialogs;

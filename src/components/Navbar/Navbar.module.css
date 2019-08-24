@@ -1,24 +1,19 @@
-.navi {
+
+.navbar {
   grid-area: n;
-  background-color: blue;
+  background-color: rgb(236, 236, 236);
   padding: 20px;
 }
-
 .item a {
   color: white;
   text-decoration: none;
-  font-size: 18px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-.item a.activeLink {
-  color: gold;
+.item a:hover {
+  color: rgb(228, 35, 35);
+  font-style: italic;
+  font-family: fantasy;
+  font-size: 24px;
 }
-
-.namesList {
-  font-size: 20px;
-}
-
-.bar {
-  padding: 50px;
-  margin: auto;
+.item a.active {
+  color: rgb(216, 109, 22);
 }

@@ -1,33 +1,30 @@
-import React from "react"
-import c from "./MyPosts.module.css"
-import Post from "./Post/Post"
+import React from "react";
+import c from "./MyPosts.module.css";
+import Post from "./Post/Post";
 
 const MyPosts = props => {
-  let postsElements = props.posts.map(post => (
-    <Post message={post.message} likesCount={post.likesCount} />
-  ))
+  let newPostElement = React.createRef();
 
-  // method create link to some element in React
-  let newPostElement = React.createRef()
-
-  let addPostClick = () => {
-    let text = newPostElement.current.value
-    //alert(text + " added")
-    props.addPost(text)
-    newPostElement.current.value = ""
-  }
+  let addPost = () => {
+    let text = newPostElement.current.value;
+    props.addPost(text);
+    newPostElement.current.value = "";
+  };
   return (
-    <div className={c.postsBlock}>
-      <h3>My Posts</h3>
-      <div>
-        <div>
-          {/* ref connected to text area */}
-          <textarea ref={newPostElement} />
-        </div>
-        <button onClick={addPostClick}>Add post</button>
+    <div>
+      MyPosts
+      <form className={c.form}>
+        <textarea placeholder="Watsapp today" ref={newPostElement} />
+
+        <img
+          src="http://www.clker.com/cliparts/N/A/G/S/5/f/red-square-button-hi.png"
+          onClick={addPost}
+        />
+      </form>
+      <div className={c.posts}>
+        <Post message={props.state} />
       </div>
-      <div className={c.posts}>{postsElements}</div>
     </div>
-  )
-}
-export default MyPosts
+  );
+};
+export default MyPosts;

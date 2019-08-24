@@ -1,7 +1,21 @@
-.postsBlock {
+
+textarea {
+  width: 300px;
+}
+form img {
+  height: 100px;
   padding: 10px;
 }
 
-.posts {
-  margin-top: 10px;
+form textarea {
+  height: 100px;
+}
+form img:hover{
+  background-color: #121312
+}
+
+form img:active {
+  background-color: #060a06;
+  box-shadow: 0 1px #666;
+  transform: translateY(4px);
 }

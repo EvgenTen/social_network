@@ -1,14 +1,14 @@
-import React from "react"
-import c from "../../App.css"
-import MyPosts from "./MyPosts/MyPosts"
-import ProfileInfo from "./ProfileInfo/ProfileInfo"
+import React from "react";
+import c from "./Profile.module.css";
+import MyPosts from "./MyPosts/MyPosts";
+import Profileinfo from "./Profileinfo/Profileinfo";
 
 const Profile = props => {
   return (
     <div>
-      <ProfileInfo />
-      <MyPosts posts={props.posts} addPost={props.addPost} />
+      <Profileinfo />
+      <MyPosts state={props.state.posts} addPost={props.addPost} />
     </div>
-  )
-}
-export default Profile
+  );
+};
+export default Profile;

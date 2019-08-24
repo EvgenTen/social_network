@@ -1,19 +1,13 @@
 import React from "react";
-import c from "./ProfileInfo.module.css";
+import c from "./Profileinfo.module.css";
 
-const ProfileInfo = () => {
+const Profileinfo = () => {
   return (
-    <div>
-      <div>
-        <img
-          src="https://static.interestingengineering.com/images/APRIL/sizes/black_hole_resize_md.jpg"
-          alt=":name"
-        />
-      </div>
-      <div className={c.descriptionBlock}>
-        <div>ava + description</div>
-      </div>
+    <div className={c.profile}>
+      <img src="https://www.desktopbackground.org/download/2304x864/2010/04/12/941_prague-hd-wallpapers-for-3840-2160-wallpapersiq_3840x2160_h.jpg" />
+      <p>Here goes Profile and more</p>
+     
     </div>
   );
 };
-export default ProfileInfo;
+export default Profileinfo;

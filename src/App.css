@@ -1,5 +1,5 @@
 .app-wrapper {
-  width: 1200px;
+  width: 1000px;
   margin: 0 auto;
   display: grid;
   grid-template-areas:
@@ -8,9 +8,10 @@
 
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
-  /* grid-gap: 10px; */
+  grid-gap: 10px;
 }
-
 .app-wrapper-content {
-  background-color: aquamarine;
+  grid-area: p;
+  background-color: rgb(236, 236, 236);
+  padding: 10px;
 }

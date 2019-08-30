@@ -22,7 +22,8 @@ let state = {
       { id: 1, message: "HI how are u?", likes: 11 },
       { id: 2, message: "i am fine", likes: 12 },
       { id: 3, message: "Hey", likes: 3 }
-    ]
+    ],
+    newPostText: "Martusha"
   }
 };
 

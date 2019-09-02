@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
 import { BrowserRouter, Route } from "react-router-dom";
+import { addNewMesage } from './redux/state';
 
 //----------------DATA--------------------------------Comment
 
@@ -16,7 +17,9 @@ const App = props => {
       <div className="app-wrapper-content">
         <Route
           path="/dialogs"
-          render={() => <Dialogs state={props.state.dialogPage} />}
+		  render={() => <Dialogs state={props.state.dialogPage}
+		  						 addNewMessage={props.addNewMessage}
+		   />}
         />
         <Route
           path="/profile"

@@ -14,7 +14,8 @@ let state = {
       { id: 2, message: "How are You?" },
       { id: 3, message: "I am fine" },
       { id: 4, message: "WTF" }
-    ]
+	],
+	newMessage: "New message from me"
   },
 
   profilePage: {
@@ -23,18 +24,26 @@ let state = {
       { id: 2, message: "i am fine", likes: 12 },
       { id: 3, message: "Hey", likes: 3 }
     ],
-    newPostText: "Martusha katan"
+    newPostText: "Martusha"
   }
 };
 
 export let addPost = postMessage => {
   let newPost = {
-    id: 4,
-    message: postMessage,
-    likes: 0
+    id: 5,
+    message: postMessage
   };
   state.profilePage.posts.push(newPost);
   rerenderEntireTree(state);
 };
 
+export let addNewMessage = newMessage => {
+	let messages = {
+	  id: 4,
+	  message: newMessage,
+	  likes: 0
+	};
+	state.dialogPage.messages.push(messages);
+	rerenderEntireTree(state);
+  }; 
 export default state;

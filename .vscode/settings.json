@@ -1,4 +1,3 @@
 {
-  "editor.formatOnSave": true,
-  "workbench.colorTheme": "Monokai"
+"editor.formatOnSave": true
 }

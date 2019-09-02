@@ -14,7 +14,9 @@ const DialogItem = props => {
     </div>
   ));
 
-  return <div>{dialogsList}</div>;
+  return <div>{dialogsList}
+ 
+  </div>;
 };
 
 export default DialogItem;

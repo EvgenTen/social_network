@@ -23,7 +23,7 @@ let state = {
       { id: 2, message: "i am fine", likes: 12 },
       { id: 3, message: "Hey", likes: 3 }
     ],
-    newPostText: "Martusha"
+    newPostText: "Martusha katan"
   }
 };
 
@@ -34,7 +34,7 @@ export let addPost = postMessage => {
     likes: 0
   };
   state.profilePage.posts.push(newPost);
-  rerenderEntireTree(state)
+  rerenderEntireTree(state);
 };
 
 export default state;

@@ -6,7 +6,7 @@ import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
 import { BrowserRouter, Route } from "react-router-dom";
 
-//----------------DATA--------------------------------
+//----------------DATA--------------------------------Comment
 
 const App = props => {
   return (
@@ -20,7 +20,12 @@ const App = props => {
         />
         <Route
           path="/profile"
-          render={() => <Profile profilePage={props.state.profilePage} addPost={props.addPost} />}
+          render={() => (
+            <Profile
+              profilePage={props.state.profilePage}
+              addPost={props.addPost}
+            />
+          )}
         />
       </div>
     </div>

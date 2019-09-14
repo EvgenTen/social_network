@@ -1,12 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import state from "./redux/state";
 import { BrowserRouter } from "react-router-dom";
-import { addPost } from "./redux/state";
-import {rerenderEntireTree} from "./render"
+import store from "./redux/state";
 
+let rerenderEntireTree = state => {
+  ReactDOM.render(
+    <BrowserRouter>
+      <App state={state} dispatch={store.dispatch.bind(store)} store={store} />
+    </BrowserRouter>,
+    document.getElementById("root")
+  );
+};
 
-rerenderEntireTree(state);
-// state goes to props in APP & addPost function
-//addPost("Samurai")
+rerenderEntireTree(store.getState())
+
+store.subscribe(rerenderEntireTree)

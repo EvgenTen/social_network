@@ -24,10 +24,7 @@ const MyPosts = props => {
       <form className={c.form}>
         <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} />
 
-        <img
-          src="http://www.clker.com/cliparts/N/A/G/S/5/f/red-square-button-hi.png"
-          onClick={addPost}
-        />
+        <img src="http://www.clker.com/cliparts/N/A/G/S/5/f/red-square-button-hi.png" onClick= {addPost} />
       </form>
       <div className={c.posts}>
         <Post message={props.posts} />

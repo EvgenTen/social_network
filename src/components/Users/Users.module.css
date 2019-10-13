@@ -1,0 +1,13 @@
+.usersInfo {
+    display: grid;
+    grid-template-columns: 20% 80%;
+  }
+  
+  .usersInfo img {
+    height: 30px;
+    
+  }
+  
+ 
+  
+  

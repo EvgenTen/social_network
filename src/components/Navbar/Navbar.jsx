@@ -23,7 +23,9 @@ const Navbar = props => {
         </NavLink>
       </div>
       <div className={c.item}>
-        <a>News</a>
+      <NavLink to="/users" activeClassName={c.active}>
+          Users
+        </NavLink>
       </div>
       <div className={c.item}>
         <a>Music</a>

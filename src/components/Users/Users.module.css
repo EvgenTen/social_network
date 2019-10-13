@@ -4,8 +4,9 @@
   }
   
   .usersInfo img {
-    height: 30px;
-    
+    width: 50px;
+  	border-radius: 60px;
+  	padding: 50px;
   }
   
  

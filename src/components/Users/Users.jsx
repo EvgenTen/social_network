@@ -1,37 +1,16 @@
 import React from "react";
 import c from "./Users.module.css";
+import * as axios from "axios";
+import boy from "../../assets/images/boy.png";
 
 let Users = props => {
   if (props.users.length === 0) {
-    props.setUsers([
-      {
-        id: 1,
-        photoUrl:
-          "https://icon-library.net/images/face-icon-png/face-icon-png-17.jpg",
-        followed: false,
-        fullName: "Dmitry",
-        status: "I`m Boss",
-        location: { city: "Moscow", country: "Russia" }
-      },
-      {
-        id: 2,
-        photoUrl:
-          "https://icon-library.net/images/face-icon-png/face-icon-png-17.jpg",
-        followed: true,
-        fullName: "Oleg",
-        status: "I`m lego",
-        location: { city: "Vladivostok", country: "Russia" }
-      },
-      {
-        id: 3,
-        photoUrl:
-          "https://icon-library.net/images/face-icon-png/face-icon-png-17.jpg",
-        followed: false,
-        fullName: "Kurva",
-        status: "I`m Kurva",
-        location: { city: "Porvan", country: "Romania" }
-      }
-    ]);
+    axios
+      .get("https://social-network.samuraijs.com/api/1.0/users")
+      .then(response => {
+        debugger;
+        props.setUsers(response.data.items);
+      });
   }
 
   return (
@@ -40,7 +19,7 @@ let Users = props => {
         <div key={u.id}>
           <span>
             <div>
-              <img src={u.photoUrl} className={c.userPhoto} />
+              <img src={u.photos.small == null ? boy : u.photos.small} className={c.userPhoto} />
             </div>
             <div>
               {u.followed ? (
@@ -63,12 +42,13 @@ let Users = props => {
             </div>
           </span>
           <span>
-            <div>{u.fullName}</div>
+            <div>{u.name}</div>
             <div>{u.status}</div>
+            <div>{u.followed}</div>
           </span>
           <span>
-            <div>{u.location.country}</div>
-            <div>{u.location.city}</div>
+            <div>{"u.location.country"}</div>
+            <div>{"u.location.city"}</div>
           </span>
         </div>
       ))}
